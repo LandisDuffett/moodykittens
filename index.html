@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Moody Kittens | CodeWorks</title>
+  <link rel="shortcut icon" href="moody-logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="bg-dark d-flex align-items-center p-1 space-between">
+    <img src="moody-logo.png" height="60" alt="Moody Kittens">
+    <button class="btn-cancel hover" onclick="empty()">Delete all  <span id="kittyNum"></span>  Kitties!</button>
+    <form class="" onsubmit="addKitten(event)">
+      <div class="d-flex">
+        <input placeholder="Name" type="text" name="name" />
+        <button class="btn-special" type="submit">
+          /ᐠ｡ꞈ｡ᐟ\
+        </button>
+      </div>
+    </form>
+  </header>
+  <main class="container">
+    <div id="mainfield">
+      
+    </div>
+    <div class="p-2">
+      <div id="kittens" class="d-flex align-items-center flex-wrap">
+      </div>
+  </main>
+  
+  
+</body>
+<script src="app.js"></script>
+</html>
