@@ -227,7 +227,9 @@ function setAffection() {
  * Defines the Properties of a Kitten
  * @typedef {{id: string, name: string, mood: string, affection: number}} Kitten
  */
-
+function removeButton() {
+  document.getElementById("dir").remove()
+}
 /**
  * Used to generate a random string id for mocked
  * database generated Id
