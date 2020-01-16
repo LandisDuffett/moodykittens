@@ -37,7 +37,7 @@ main{
   z-index: 2;
 }
 footer{
-  height: 120px;
+  height: auto;
 }
 
 p{
@@ -87,6 +87,7 @@ button{
   padding: .5em;
   margin: 5px;
 }
+
 button:focus{
   outline: none;
 }
