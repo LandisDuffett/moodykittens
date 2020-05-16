@@ -15,29 +15,35 @@
 <body>
   <header class="bg-dark d-flex align-items-center p-1 space-between">
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
-    <button class="btn-cancel hover" onclick="empty()">Delete all  <span id="kittyNum"></span>  Kitties!</button>
+    <button class="btn-cancel hover" onclick="empty()">Delete all <span id="kittyNum"></span> Kitties!</button>
     <form class="" onsubmit="addKitten(event)">
       <div class="d-flex">
-        <input placeholder="Name" type="text" name="name" />
+        <input placeholder="Name" type="text" name="name" required />
         <button class="btn-special" type="submit">
           /ᐠ｡ꞈ｡ᐟ\
         </button>
       </div>
     </form>
   </header>
-  
-    <div id="mainfield">
-      
+
+  <div id="mainfield">
+
+  </div>
+  <div class="p-2">
+    <div id="kittens" class="d-flex align-items-center flex-wrap">
     </div>
-    <div class="p-2">
-      <div id="kittens" class="d-flex align-items-center flex-wrap">
-      </div>
-      <div>
+    <div>
       <footer id="dir" class="carde">
-        <div><small>Welcome to MOODY KITTENS! Enter a name in the blank above to create each cat. Pet your cats and give them catnip but if their affection level falls to zero, they will run away. Delete all your kitties to start over. Enjoy!    <button onclick="removeButton()">Remove instructions</button></small></footer></div>
-      </footer></div>
-  
-  
+        <div><small>Welcome to MOODY KITTENS! Enter a name in the blank above to create each cat. Pet your cats and give
+            them catnip but if their affection level falls to zero, they will run away. Delete all your kitties to start
+            over. Enjoy! <button onclick="removeButton()">Remove instructions</button></small>
+      </footer>
+    </div>
+    </footer>
+  </div>
+
+
 </body>
 <script src="app.js"></script>
+
 </html>
