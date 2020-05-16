@@ -32,12 +32,12 @@ function addKitten(event) {
       } else {
         return "gone";
       }
-      }
     }
-  
-    pushToArray(kittens, kitten) 
-  
- 
+  }
+
+  pushToArray(kittens, kitten)
+
+
   saveKittens()
   form.reset()
 }
@@ -48,17 +48,18 @@ function addKitten(event) {
  */
 function saveKittens() {
   window.localStorage.setItem("kittens", JSON.stringify(kittens))
-  drawKittens()}
+  drawKittens()
+}
 
 function pushToArray(arr, obj) {
-  const index = arr.findIndex((k) => k.name ==obj.name)
+  const index = arr.findIndex((k) => k.name == obj.name)
 
   if (index === -1) {
     arr.push(obj);
   } else {
     alert("You can't have more than one kitty with the same name! Please choose a different name.");
     drawKittens()
-    
+
   }
 }
 /**
@@ -82,7 +83,7 @@ function drawKittens() {
   kittens.forEach(kitten => {
     if (kitten.mood == "happy") {
       template += `
-    <div class="card p-2 text-center w-30">
+    <div class="card p-2 w-30">
         <img class="kitten happy" src="https://robohash.org/${kitten.name}?set=set4" height="120" alt="Moody Kittens">
         <div class="mt-2">
           <b class="text-center"><span>Name:  ${kitten.name}</span>
@@ -98,7 +99,7 @@ function drawKittens() {
     `
     } else if (kitten.mood == "tolerant") {
       template += `
-    <div class="card p-2 text-center w-30">
+    <div class="card p-2 w-30">
         <img class="kitten tolerant" src="https://robohash.org/${kitten.name}?set=set4" height="120" alt="Moody Kittens">
         <div class="mt-2">
           <b class="text-center"><span>Name:  ${kitten.name}</span>
@@ -114,7 +115,7 @@ function drawKittens() {
     `
     } else if (kitten.mood == "angry") {
       template += `
-    <div class="card p-2 text-center w-30">
+    <div class="card p-2 w-30">
         <img class="kitten angry" src="https://robohash.org/${kitten.name}?set=set4" height="120" alt="Moody Kittens">
         <div class="mt-2">
           <b class="text-center"><span>Name:  ${kitten.name}</span>
@@ -130,16 +131,16 @@ function drawKittens() {
     `
     } else {
       template += `
-    <div class="card bye p-2 text-center w-30">
+    <div class="card p-2 pb-3 w-30">
         <img class="kitten gone" src="https://robohash.org/${kitten.name}?set=set4" height="120" alt="Moody Kittens">
         <div class="mt-2">
-          <b class="text-center"><span>Sorry,  ${kitten.name} ran away and is gone forever.</span>
+          <b class="text-center"><span>Sorry,  ${kitten.name} <br> ran away <br> and is gone <br> forever.</span>
           </b>
         </div>
       </div>
     `
     }
-    
+
   })
   kittyNumElem.innerText = kittens.length.toString()
   document.getElementById("mainfield").innerHTML = template
@@ -173,10 +174,10 @@ function empty() {
  * @param {string} id
  */
 function pet(id) {
-  let cat =findKittenById(id)
-  let dec =Math.random()
-  if (dec > .7) {cat.affection++}
-  else {cat.affection--}
+  let cat = findKittenById(id)
+  let dec = Math.random()
+  if (dec > .7) { cat.affection++ }
+  else { cat.affection-- }
   setKittenMood(cat)
   saveKittens()
   drawKittens()
@@ -191,8 +192,8 @@ function pet(id) {
  * @param {string} id
  */
 function catnip(id) {
-  let cat =findKittenById(id)
-  cat.affection =5
+  let cat = findKittenById(id)
+  cat.affection = 5
   setKittenMood(cat)
   saveKittens()
   drawKittens()
@@ -205,18 +206,15 @@ function catnip(id) {
  */
 function setKittenMood(kitten) {
   if (kitten.affection >= 6) {
-    kitten.mood ="happy";
+    kitten.mood = "happy";
   } else if (kitten.affection == 4 || kitten.affection == 5) {
-    kitten.mood ="tolerant";
+    kitten.mood = "tolerant";
   } else if (kitten.affection == 3 || kitten.affection == 2 || kitten.affection == 1) {
-    kitten.mood ="angry";
+    kitten.mood = "angry";
   } else {
-    kitten.mood ="gone";
+    kitten.mood = "gone";
   }
 }
-
-
-
 
 function setAffection() {
   return Math.floor(Math.random() * 6 + 1)
